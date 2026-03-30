@@ -3,28 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sujay | DevOps Engineer</title>
+    <title>Sujay | IT Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: system-ui, -apple-system, sans-serif;
-            max-width: 600px;
-            margin: 80px auto;
-            padding: 20px;
-            line-height: 1.6;
+        :root {
+            --bg-color: #f8f7f4;
+            --text-color: #3d3d3d;
+            --text-muted: #6b6b6b;
+            --accent-color: #c9e5f0;
+            --accent-hover: #8ec5db;
+            --link-color: #4a90a4;
+            --border-color: #e5e5e5;
+            --sidebar-width: 280px;
         }
-        h1 { margin-bottom: 0; }
-        .subtitle { color: #666; margin-top: 4px; }
-        a { color: #0066cc; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            padding: 3rem 2rem;
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: var(--bg-color);
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .profile h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .profile .tagline {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .nav {
+            margin-top: 2rem;
+        }
+
+        .nav a {
+            display: block;
+            padding: 0.6rem 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            margin-bottom: 0.3rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 4rem 3rem;
+            max-width: 800px;
+        }
+
+        .main h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .main p {
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .highlight {
+            background-color: var(--accent-color);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        /* Skills Section */
+        .skills {
+            margin-top: 3rem;
+        }
+
+        .skills h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .skill-tag {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        /* Experience Section */
+        .experience {
+            margin-top: 3rem;
+        }
+
+        .experience-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .experience-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-item .company {
+            color: var(--link-color);
+            font-size: 0.95rem;
+        }
+
+        .experience-item .period {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: rgba(168, 212, 230, 0.2);
+            border-radius: 8px;
+        }
+
+        .contact h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                padding: 2rem 1.5rem;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Sujay</h1>
-    <p class="subtitle">DevOps Engineer | SRE | Platform Engineering</p>
-    <p>11 years of experience in Infrastructure and DevOps. Currently exploring opportunities in the Netherlands and Europe.</p>
-    <p>
-        <a href="https://linkedin.com/in/YOURLINKEDIN">LinkedIn</a> ·
-        <a href="https://github.com/YOURGITHUB">GitHub</a> ·
-        <a href="mailto:contact@sujays.dev">Contact</a>
-    </p>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="avatar">S</div>
+                <h1>Sujay</h1>
+                <p class="tagline">DevOps Engineer · SRE · Platform Engineering</p>
+            </div>
+
+            <nav class="nav">
+                <a href="#about" class="active">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/YOURLINKEDIN" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ss67" target="_blank">GitHub</a>
+            </div>
+        </aside>
+
+        <main class="main">
+            <section id="about">
+                <h2>Hello, I'm Sujay 👋</h2>
+                <p>
+                    I'm a <span class="highlight">DevOps Engineer</span> with 11 years of experience in Infrastructure and DevOps. 
+                    I specialize in building scalable, reliable systems and automating everything that can be automated.
+                </p>
+                <p>
+                    Currently exploring opportunities in <span class="highlight">the Netherlands</span> and Europe, 
+                    looking to bring my expertise in cloud infrastructure, CI/CD pipelines, and platform engineering 
+                    to innovative teams.
+                </p>
+            </section>
+
+            <section class="skills" id="skills">
+                <h3>Technologies & Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">VMware vSphere</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">CI/CD</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">Monitoring</span>
+                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Grafana</span>
+                </div>
+            </section>
+
+            <section class="experience" id="experience">
+                <h3>Experience</h3>
+                <div class="experience-item">
+                    <h4>Senior DevOps Engineer</h4>
+                    <p class="company">Company Name</p>
+                    <p class="period">2023 – Present</p>
+                </div>
+                <div class="experience-item">
+                    <h4>DevOps Engineer</h4>
+                    <p class="company">Previous Company</p>
+                    <p class="period">2019 – 2023</p>
+                </div>
+                <div class="experience-item">
+                    <h4>Infrastructure Engineer</h4>
+                    <p class="company">Earlier Company</p>
+                    <p class="period">2014 – 2019</p>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <h3>Let's Connect</h3>
+                <p>
+                    I'm open to discussing DevOps, SRE, or Platform Engineering roles in Europe. 
+                    Reach out at <a href="mailto:contact@sujays.dev">contact@sujays.dev</a>
+                </p>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
