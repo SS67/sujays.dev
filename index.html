@@ -284,6 +284,43 @@
             margin-top: 0.5rem;
         }
 
+        /* Knowledge Base Section */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .knowledge-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .knowledge-card:hover {
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .knowledge-card h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .knowledge-card p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
         /* Experience Section */
         .experience-item {
             padding: 1.2rem 0;
@@ -446,6 +483,7 @@
                 <a href="#about" class="active">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#articles">Articles</a>
+                <a href="#knowledge">Knowledge</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -546,40 +584,77 @@
                 <p>Technical writeups and knowledge sharing on infrastructure and DevOps topics.</p>
                 
                 <div class="articles-grid">
-                    <a href="#" class="article-card">
+                    <a href="/articles/podman-guide.html" class="article-card">
                         <h5>Getting Started with Podman</h5>
                         <p>A comprehensive guide to container management without daemon</p>
                         <span class="tag">Podman</span>
                     </a>
 
-                    <a href="#" class="article-card">
+                    <a href="/articles/satellite-setup.html" class="article-card">
                         <h5>Red Hat Satellite Setup Guide</h5>
                         <p>Managing RHEL systems at scale with Satellite</p>
                         <span class="tag">Satellite</span>
                     </a>
 
-                    <a href="#" class="article-card">
+                    <a href="/articles/idm-setup.html" class="article-card">
                         <h5>Identity Management with Red Hat IdM</h5>
                         <p>Centralized authentication and authorization</p>
                         <span class="tag">Red Hat IdM</span>
                     </a>
 
-                    <a href="#" class="article-card">
+                    <a href="/articles/vsphere-tips.html" class="article-card">
                         <h5>vSphere Administration Best Practices</h5>
                         <p>Enterprise virtualization tips and tricks</p>
                         <span class="tag">vSphere</span>
                     </a>
 
-                    <a href="#" class="article-card">
+                    <a href="/articles/kaniko-builds.html" class="article-card">
                         <h5>Building Images with Kaniko</h5>
                         <p>Daemonless container builds in Kubernetes</p>
                         <span class="tag">Kaniko</span>
                     </a>
 
-                    <a href="#" class="article-card">
+                    <a href="/articles/cloudops-fundamentals.html" class="article-card">
                         <h5>CloudOps Fundamentals</h5>
                         <p>Managing cloud infrastructure at scale</p>
                         <span class="tag">CloudOps</span>
+                    </a>
+                </div>
+            </section>
+
+            <section id="knowledge">
+                <h3>Knowledge Base</h3>
+                <p>Personal reference documentation on infrastructure, DevOps tools, and platform topics.</p>
+
+                <div class="knowledge-grid">
+                    <a href="/knowledge/linux/index.html" class="knowledge-card">
+                        <h5>🐧 Linux</h5>
+                        <p>Networking, filesystem, systemd, troubleshooting</p>
+                    </a>
+
+                    <a href="/knowledge/kubernetes/index.html" class="knowledge-card">
+                        <h5>☸️ Kubernetes</h5>
+                        <p>kubectl commands, debugging, cluster operations</p>
+                    </a>
+
+                    <a href="/knowledge/terraform/index.html" class="knowledge-card">
+                        <h5>🏗️ Terraform</h5>
+                        <p>IaC patterns, state management, modules</p>
+                    </a>
+
+                    <a href="/knowledge/ansible/index.html" class="knowledge-card">
+                        <h5>⚙️ Ansible</h5>
+                        <p>Playbooks, roles, inventory, vault</p>
+                    </a>
+
+                    <a href="/knowledge/vsphere/index.html" class="knowledge-card">
+                        <h5>🖥️ vSphere</h5>
+                        <p>vCenter administration, ESXi, PowerCLI</p>
+                    </a>
+
+                    <a href="/knowledge/redhat/index.html" class="knowledge-card">
+                        <h5>🔴 Red Hat</h5>
+                        <p>Satellite, IdM/FreeIPA, RHEL hardening</p>
                     </a>
                 </div>
             </section>
