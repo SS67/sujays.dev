@@ -96,6 +96,12 @@
         ['/articles/cloudops-fundamentals.html',  'CloudOps Fundamentals']
       ]
     },
+    projects: {
+      title: 'Projects',
+      links: [
+        ['/projects/index.html', 'All Projects']
+      ]
+    },
     'knowledge/linux': {
       title: '🐧 Linux',
       links: [
@@ -164,7 +170,7 @@
     var keys = [
       'knowledge/linux', 'knowledge/kubernetes', 'knowledge/terraform',
       'knowledge/ansible', 'knowledge/vsphere', 'knowledge/redhat',
-      'articles', 'knowledge'
+      'articles', 'projects', 'knowledge'
     ];
     for (var i = 0; i < keys.length; i++) {
       if (path.indexOf('/' + keys[i] + '/') === 0 || path === '/' + keys[i] + '/index.html') {
