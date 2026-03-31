@@ -24,6 +24,7 @@ I'm **Sujay**, a DevOps Engineer with 11 years of experience in Infrastructure a
 ├── skills/                 # Technology expertise breakdown
 ├── articles/               # Published technical articles
 ├── experience/             # Work history
+├── projects/               # Projects & open source contributions
 │
 └── knowledge/              # Personal knowledge base
     ├── linux/              # Linux sysadmin, networking, OS

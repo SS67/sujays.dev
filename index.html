@@ -348,6 +348,148 @@
             margin-top: 0.2rem;
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.2rem;
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card h5 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .project-status {
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        .status-active {
+            background: rgba(72, 187, 120, 0.15);
+            color: #276749;
+        }
+
+        .status-completed {
+            background: rgba(74, 144, 164, 0.15);
+            color: #2b6480;
+        }
+
+        .status-contributing {
+            background: rgba(214, 158, 46, 0.15);
+            color: #7b6019;
+        }
+
+        .project-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0 0 0.7rem;
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .project-tag {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.72rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: auto;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        .oss-banner {
+            margin-top: 1.5rem;
+            padding: 1.2rem 1.4rem;
+            background: rgba(201, 229, 240, 0.2);
+            border: 1px dashed var(--accent-hover);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .oss-banner .oss-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .oss-banner .oss-text h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .oss-banner .oss-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .oss-banner .oss-text a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .oss-banner .oss-text a:hover {
+            text-decoration: underline;
+        }
+
         /* Contact Section */
         .contact-box {
             padding: 1.5rem;
@@ -412,6 +554,15 @@
 
             .articles-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .oss-banner {
+                flex-direction: column;
+                text-align: center;
             }
 
             .profile {
@@ -484,6 +635,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#articles">Articles</a>
                 <a href="#knowledge">Knowledge</a>
+                <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -656,6 +808,122 @@
                         <h5>🔴 Red Hat</h5>
                         <p>Satellite, IdM/FreeIPA, RHEL hardening</p>
                     </a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h3>Projects</h3>
+                <p>Things I've built, automated, or contributed to — from internal platforms to open source.</p>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>🌐 sujays.dev</h5>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <p>This very site — a personal portfolio and knowledge base built with static HTML, Markdown, and a custom reader.js rendering engine.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Markdown</span>
+                            <span class="project-tag">Cloudflare Pages</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ss67/sujays.dev" target="_blank">⌘ Source</a>
+                            <a href="/">⟶ Live</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>🏗️ Infra-as-Code Templates</h5>
+                            <span class="project-status status-active">Active</span>
+                        </div>
+                        <p>Reusable Terraform modules and Ansible roles for provisioning cloud infrastructure, configuring RHEL hosts, and managing Kubernetes clusters.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Terraform</span>
+                            <span class="project-tag">Ansible</span>
+                            <span class="project-tag">AWS</span>
+                            <span class="project-tag">Kubernetes</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ss67" target="_blank">⌘ GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>🔄 CI/CD Pipeline Framework</h5>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                        <p>An opinionated Jenkins shared library and GitHub Actions workflow collection for building, testing, and deploying containerized applications.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Jenkins</span>
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">Groovy</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ss67" target="_blank">⌘ GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>📦 Container Image Factory</h5>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                        <p>Automated base image build pipeline using Kaniko inside Kubernetes — scanned, signed, and pushed to private registries on every commit.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Kaniko</span>
+                            <span class="project-tag">Podman</span>
+                            <span class="project-tag">Kubernetes</span>
+                            <span class="project-tag">Cosign</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/articles/kaniko-builds.html">⟶ Read Article</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>🛰️ Satellite Fleet Manager</h5>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                        <p>End-to-end automation for deploying and configuring Red Hat Satellite servers, managing content views, and patching thousands of RHEL hosts.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Red Hat Satellite</span>
+                            <span class="project-tag">Ansible</span>
+                            <span class="project-tag">RHEL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/articles/satellite-setup.html">⟶ Read Article</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h5>🖥️ vSphere Automation Toolkit</h5>
+                            <span class="project-status status-completed">Completed</span>
+                        </div>
+                        <p>PowerCLI and Terraform scripts for VM lifecycle management, cluster health checks, and automated vSphere environment provisioning.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">vSphere</span>
+                            <span class="project-tag">PowerCLI</span>
+                            <span class="project-tag">Terraform</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="/articles/vsphere-tips.html">⟶ Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="oss-banner">
+                    <span class="oss-icon">🐙</span>
+                    <div class="oss-text">
+                        <h5>Open Source Contributions</h5>
+                        <p>I contribute to projects in the DevOps and cloud-native ecosystem. Check out my activity on <a href="https://github.com/ss67" target="_blank">GitHub</a> — more highlights coming soon.</p>
+                    </div>
                 </div>
             </section>
 
