@@ -29,6 +29,6 @@ I believe in:
 
 ## Contact
 
-- **Email:** contact@sujays.dev
+- **Email:** singh.sujay111@gmail.com
 - **GitHub:** https://github.com/ss67
-- **LinkedIn:** [Your LinkedIn URL]
+- **LinkedIn:** [https://www.linkedin.com/in/sujaysingh/]
